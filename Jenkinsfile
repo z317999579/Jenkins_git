@@ -1,10 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'javac hello.java'
-		sh 'java hello'
+                sh 'node --version'
             }
         }
     }
