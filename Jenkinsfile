@@ -1,12 +1,14 @@
 pipeline {
     agent {
-        docker { image 'python:3.5.1' }
+        docker { image 'rxthinking:tensor2tensor_1.5.7' }
     }
     stages {
 	stage('Test') {
             steps {
                 sh '''
+			cd predict
 			python --version
+			pyt2t ProblemDecoder_predict.py
 		'''
             }
         }
