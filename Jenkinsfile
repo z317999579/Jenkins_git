@@ -1,13 +1,12 @@
 pipeline {
     agent {
-        docker { image 'hello:latest' }
+        docker { image 'python:latest' }
     }
     stages {
 	stage('Test') {
             steps {
                 sh '''
-			ls
-			pwd
+			python test.py
 		'''
             }
         }
