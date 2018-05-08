@@ -6,6 +6,7 @@ pipeline {
 	stage('Test') {
             steps {
                 sh '''
+			cd hello
 			python test.py
 		'''
             }
