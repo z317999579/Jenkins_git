@@ -15,6 +15,9 @@ pipeline {
 	    steps{
 		sh '''
 			echo 'test passed, push to master branch'
+			git checkout master
+			cat README.md
+			git checkout test_branch
 			cat README.md
 		'''
 	    }
