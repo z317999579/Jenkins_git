@@ -1,16 +1,11 @@
 pipeline {
     agent {
-        docker { image 'node:7-alpine' }
+        docker { image 'hello' }
     }
     stages {
-        stage('Sanity check') {
-            steps {
-                input "Does the staging environment look ok?"
-            }
-        }
 	stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'java --version'
             }
         }
     }
