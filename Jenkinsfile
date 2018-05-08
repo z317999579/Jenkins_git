@@ -15,7 +15,7 @@ pipeline {
 	    steps{
 		sh '''
 			echo 'test passed, push to master branch'
-			git status
+			git remote show origin
 		'''
 	    }
 	}
