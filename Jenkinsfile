@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'python:latest' }
+        docker { image 'rxthinking:tensor2tensor_1.5.7' }
     }
     stages {
 	stage('Test') {
