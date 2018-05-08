@@ -26,8 +26,8 @@ pipeline {
         success {
             echo 'This will run only if successful'
 	    mail to:'joy317999579@gmail.com',
-		subject:'Success pipeline: ${currentBuild.fullDisplayName}',
-		body:'Successfully run ${env.BUILD_URL}'
+		subject:'Success pipeline: my first pipeline',
+		body:'Successfully run test'
         }
         failure {
             echo 'This will run only if failed'
