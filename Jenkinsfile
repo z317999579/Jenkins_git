@@ -6,8 +6,8 @@ pipeline {
 	stage('Test') {
             steps {
                 sh '''
-			cd hello
-			python test.py
+			cd predict
+			python ProblemDecoder_predict.py
 		'''
             }
         }
