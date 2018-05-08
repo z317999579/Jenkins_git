@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'rxthinking:tensor2tensor_1.5.7' }
+        docker { image 'rxthinking:tensor2tensor_1.6.2' }
     }
     stages {
 	stage('Test') {
