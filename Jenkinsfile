@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh '''
 			cd predict/app/script
-			python ProblemDecoder_predict.py
+			python test_problemDecoderPredictMode_transformerscorer
 		'''
             }
         }
