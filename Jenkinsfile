@@ -5,7 +5,10 @@ pipeline {
     stages {
 	stage('Test') {
             steps {
-                sh 'ls'
+                sh '''
+			ls
+			pwd
+		'''
             }
         }
     }
