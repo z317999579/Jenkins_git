@@ -11,6 +11,13 @@ pipeline {
 		'''
             }
         }
+	stage('Deploy'){
+	    steps{
+		sh '''
+			echo 'test passed, push to master branch'
+		'''
+	    }
+	}
     }
     post {
         always {
