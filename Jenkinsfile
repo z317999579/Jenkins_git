@@ -1,9 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'rxthinking:tensor2tensor_1.5.7' }
+    }
     stages {
-        stage('Test') {
+	stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 1'
+                sh '''
+			cd predict/app/script
+			python test_problemDecoderPredictMode_transformerscorer.py
+		'''
             }
         }
     }
@@ -13,6 +18,9 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+	    mail to:'joy317999579@gmail.com',
+		subject:'successful pipeline: test pipeline',
+		body:'successfully run pipeline'
         }
         failure {
             echo 'This will run only if failed'
