@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+	docker { image 'z317999579/t2t:157' }
+    }
     stages {
 	stage('Test') {
             steps {
