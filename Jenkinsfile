@@ -18,6 +18,7 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+	    echo 'send email to joy317999579@gmail.com'
 	    mail to:'joy317999579@gmail.com',
 		subject:'successful pipeline: test pipeline',
 		body:'successfully run pipeline'
