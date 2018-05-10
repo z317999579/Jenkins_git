@@ -1,6 +1,6 @@
 pipeline {
     agent {
-	docker { image 'z317999579/t2t:157' }
+        docker { image 'rxthinking:tensor2tensor_1.5.7' }
     }
     stages {
 	stage('Test') {
@@ -11,6 +11,14 @@ pipeline {
 		'''
             }
         }
+	stage('Deploy'){
+	    steps{
+		sh '''
+			echo 'test passed, push to master branch'
+			cat README.md
+		'''
+	    }
+	}
     }
     post {
         always {
@@ -18,10 +26,9 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-	    echo 'send email to joy317999579@gmail.com'
-	    mail to:'joy317999579@gmail.com',
-		subject:'successful pipeline: test pipeline',
-		body:'successfully run pipeline'
+	    mail to:'joy317999579@hotmail.com',
+		subject:'Success pipeline: my first pipeline',
+		body:'Successfully run test'
         }
         failure {
             echo 'This will run only if failed'
