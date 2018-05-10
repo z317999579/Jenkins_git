@@ -1,11 +1,13 @@
 pipeline {
-    agent any
+    agent {
+	docker {image 'z317999579/t2t:157'}
+    }
     stages {
 	stage('Test') {
             steps {
                 sh '''
-			cd hello
-			python test.py
+			cd predict/app/script
+			python test_problemDecoderPredictMode_transformerscorer.py
 		'''
             }
         }
