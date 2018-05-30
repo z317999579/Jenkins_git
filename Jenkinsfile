@@ -6,6 +6,8 @@ pipeline {
 	stage('Test') {
             steps {
                 sh '''
+			cd /var/jenkins_home/workspace
+			ls
 			pwd
 			echo 'hello'
 		'''
