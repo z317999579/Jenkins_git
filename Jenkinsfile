@@ -7,6 +7,7 @@ pipeline {
             steps {
                 sh '''
 			mkdir new
+			ls
 			echo 'hello'
 		'''
             }
