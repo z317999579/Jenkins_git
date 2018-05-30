@@ -6,6 +6,9 @@ pipeline {
 	stage('Test') {
             steps {
                 sh '''
+			pwd
+			cd /home
+			ls
 			echo 'hello'
 		'''
             }
