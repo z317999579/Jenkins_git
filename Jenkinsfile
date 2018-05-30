@@ -6,9 +6,7 @@ pipeline {
 	stage('Test') {
             steps {
                 sh '''
-			pwd
-			cd /home
-			ls
+			mkdir new
 			echo 'hello'
 		'''
             }
